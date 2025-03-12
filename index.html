@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .link-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .link-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+        .link-button:hover {
+            background-color: #0056b3;
+        }
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is hosted on GitHub Pages!</p>
+    <h1>Sunny Lulu's Art Studio</h1>
+    <p>Discover handmade stained glass, custom art, and estate finds.</p>
+
+    <div class="link-container">
+        <a href="https://www.etsy.com/shop/FlippinOwl" class="link-button" target="_blank">
+            Etsy Shop (Estate Finds)
+            <img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=https://www.etsy.com/shop/FlippinOwl" class="qr-code">
+        </a>
+
+        <a href="https://www.etsy.com/shop/SunnyLulusArt" class="link-button" target="_blank">
+            Etsy Shop (Stained Glass)
+            <img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=https://www.etsy.com/shop/SunnyLulusArt" class="qr-code">
+        </a>
+
+        <a href="https://www.instagram.com/yourhandle" class="link-button" target="_blank">
+            Instagram
+            <img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=https://www.instagram.com/yourhandle" class="qr-code">
+        </a>
+
+        <a href="https://www.facebook.com/yourpage" class="link-button" target="_blank">
+            Facebook
+            <img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=https://www.facebook.com/yourpage" class="qr-code">
+        </a>
+    </div>
 </body>
 </html>
