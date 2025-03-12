@@ -1,77 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Flippin Owl</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .link-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .link-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-size: 1.2em;
-            transition: background 0.3s;
-        }
-        .link-button:hover {
-            background-color: #0056b3;
-        }
-        .qr-code {
-            width: 80px;
-            height: 80px;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Flippin Owl</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      /* Optional: min-height so shorter screens don’t cut things off */
+      min-height: 100vh; 
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+
+    /* Container for all links stacked vertically */
+    .link-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* spacing between rows */
+    }
+
+    /* Each link row: 
+       "Shop Link Button" on left, "QR Code" on right */
+    .link-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* spacing between button and QR */
+    }
+
+    /* The clickable button text */
+    .link-button {
+      text-decoration: none;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      transition: background 0.3s;
+    }
+    .link-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* The QR code image size */
+    .qr-code {
+      width: 80px;
+      height: 80px;
+    }
+  </style>
 </head>
 <body>
-    <h1>The Flippin Owl</h1>
-    <p>Discover unique estate finds and handmade art.</p>
+  <h1>The Flippin Owl</h1>
+  <p>Discover unique estate finds and handmade art.</p>
 
-    <div class="link-container">
-        <a href="https://www.etsy.com/shop/theflippinowl" class="link-button" target="_blank">
-            Etsy Shop
-            <img src="https://quickchart.io/qr?size=100&text=https://www.etsy.com/shop/theflippinowl" class="qr-code">
-        </a>
-
-        <a href="https://www.instagram.com/theflippinowl" class="link-button" target="_blank">
-            Instagram
-            <img src="https://quickchart.io/qr?size=100&text=https://www.instagram.com/theflippinowl" class="qr-code">
-        </a>
-
-        <a href="https://www.facebook.com/Sunnylulus" class="link-button" target="_blank">
-            Facebook
-            <img src="https://quickchart.io/qr?size=100&text=https://www.facebook.com/Sunnylulus" class="qr-code">
-        </a>
+  <div class="link-container">
+    <!-- Etsy Row -->
+    <div class="link-item">
+      <!-- Button (Clickable) -->
+      <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="link-button">
+        Etsy Shop
+      </a>
+      <!-- QR Code (Clickable) with Etsy logo in the center -->
+      <a href="https://www.etsy.com/shop/theflippinowl" target="_blank">
+        <img 
+          class="qr-code"
+          src="https://quickchart.io/qr?size=100
+               &text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl
+               &centerImageUrl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Fa1%2FEtsy_logo_2019.svg"
+          alt="Etsy QR Code"
+        />
+      </a>
     </div>
+
+    <!-- Instagram Row -->
+    <div class="link-item">
+      <!-- Button (Clickable) -->
+      <a href="https://www.instagram.com/theflippinowl" target="_blank" class="link-button">
+        Instagram
+      </a>
+      <!-- QR Code (Clickable) with Instagram logo in the center -->
+      <a href="https://www.instagram.com/theflippinowl" target="_blank">
+        <img 
+          class="qr-code"
+          src="https://quickchart.io/qr?size=100
+               &text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl
+               &centerImageUrl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fe7%2FInstagram_logo_2016.svg"
+          alt="Instagram QR Code"
+        />
+      </a>
+    </div>
+
+    <!-- Facebook Row -->
+    <div class="link-item">
+      <!-- Button (Clickable) -->
+      <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="link-button">
+        Facebook
+      </a>
+      <!-- QR Code (Clickable) with Facebook logo in the center -->
+      <a href="https://www.facebook.com/Sunnylulus" target="_blank">
+        <img 
+          class="qr-code"
+          src="https://quickchart.io/qr?size=100
+               &text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus
+               &centerImageUrl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc2%2FF_icon.svg"
+          alt="Facebook QR Code"
+        />
+      </a>
+    </div>
+  </div>
 </body>
 </html>
