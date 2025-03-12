@@ -26,25 +26,20 @@
       margin-bottom: 1em;
     }
 
-    /* Container for all links stacked vertically */
     .link-container {
       display: flex;
       flex-direction: column;
-      gap: 20px; /* spacing between rows */
+      gap: 20px;
     }
 
-    /* Each link row: 
-       "Shop Link Button" on the left, 
-       "Small Logo + QR Code" on the right */
     .link-item {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 20px; /* spacing between button and the QR container */
+      gap: 20px;
     }
 
-    /* The clickable button text */
     .link-button {
       text-decoration: none;
       background-color: #007BFF;
@@ -58,24 +53,21 @@
       background-color: #0056b3;
     }
 
-    /* Container that holds both the logo and the QR code in a vertical stack */
     .qr-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-decoration: none; /* so no underline on hover */
+      text-decoration: none;
     }
 
-    /* Small logo on top */
     .qr-logo {
-      width: 40px; /* adjust as desired */
+      width: 40px;
       margin-bottom: 5px;
     }
 
-    /* The QR code image */
     .qr-code {
-      width: 80px;  /* adjust as desired */
-      height: 80px; /* adjust as desired */
+      width: 80px;
+      height: 80px;
     }
   </style>
 </head>
@@ -87,15 +79,13 @@
 
     <!-- Etsy Row -->
     <div class="link-item">
-      <!-- Left: Button -->
       <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="link-button">
         Etsy Shop
       </a>
-      <!-- Right: Small logo on top of QR code (clickable) -->
       <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="qr-container">
         <img 
           class="qr-logo" 
-          src="LOGO_URL" 
+          src="https://cdn.brandfetch.io/v2/logo/etsy.com" 
           alt="Etsy Logo" 
         />
         <img
@@ -108,15 +98,13 @@
 
     <!-- Instagram Row -->
     <div class="link-item">
-      <!-- Left: Button -->
       <a href="https://www.instagram.com/theflippinowl" target="_blank" class="link-button">
         Instagram
       </a>
-      <!-- Right: Small logo on top of QR code (clickable) -->
       <a href="https://www.instagram.com/theflippinowl" target="_blank" class="qr-container">
         <img 
           class="qr-logo" 
-          src="LOGO_URL"
+          src="https://cdn.brandfetch.io/v2/logo/instagram.com"
           alt="Instagram Logo"
         />
         <img
@@ -129,15 +117,13 @@
 
     <!-- Facebook Row -->
     <div class="link-item">
-      <!-- Left: Button -->
       <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="link-button">
         Facebook
       </a>
-      <!-- Right: Small logo on top of QR code (clickable) -->
       <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="qr-container">
         <img
           class="qr-logo"
-          src="LOGO_URL"
+          src="https://cdn.brandfetch.io/v2/logo/facebook.com"
           alt="Facebook Logo"
         />
         <img
