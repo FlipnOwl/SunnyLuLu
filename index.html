@@ -13,7 +13,6 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      /* Optional: min-height so shorter screens don’t cut things off */
       min-height: 100vh; 
       justify-content: center;
     }
@@ -35,13 +34,14 @@
     }
 
     /* Each link row: 
-       "Shop Link Button" on left, "QR Code" on right */
+       "Shop Link Button" on the left, 
+       "Small Logo + QR Code" on the right */
     .link-item {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 20px; /* spacing between button and QR */
+      gap: 20px; /* spacing between button and the QR container */
     }
 
     /* The clickable button text */
@@ -58,10 +58,24 @@
       background-color: #0056b3;
     }
 
-    /* The QR code image size */
+    /* Container that holds both the logo and the QR code in a vertical stack */
+    .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none; /* so no underline on hover */
+    }
+
+    /* Small logo on top */
+    .qr-logo {
+      width: 40px; /* adjust as desired */
+      margin-bottom: 5px;
+    }
+
+    /* The QR code image */
     .qr-code {
-      width: 80px;
-      height: 80px;
+      width: 80px;  /* adjust as desired */
+      height: 80px; /* adjust as desired */
     }
   </style>
 </head>
@@ -70,19 +84,23 @@
   <p>Discover unique estate finds and handmade art.</p>
 
   <div class="link-container">
+
     <!-- Etsy Row -->
     <div class="link-item">
-      <!-- Button (Clickable) -->
+      <!-- Left: Button -->
       <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="link-button">
         Etsy Shop
       </a>
-      <!-- QR Code (Clickable) with Etsy logo in the center -->
-      <a href="https://www.etsy.com/shop/theflippinowl" target="_blank">
+      <!-- Right: Small logo on top of QR code (clickable) -->
+      <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="qr-container">
         <img 
+          class="qr-logo" 
+          src="LOGO_URL" 
+          alt="Etsy Logo" 
+        />
+        <img
           class="qr-code"
-          src="https://quickchart.io/qr?size=100
-               &text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl
-               &centerImageUrl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Fa1%2FEtsy_logo_2019.svg"
+          src="https://quickchart.io/qr?size=100&text=https://www.etsy.com/shop/theflippinowl"
           alt="Etsy QR Code"
         />
       </a>
@@ -90,17 +108,20 @@
 
     <!-- Instagram Row -->
     <div class="link-item">
-      <!-- Button (Clickable) -->
+      <!-- Left: Button -->
       <a href="https://www.instagram.com/theflippinowl" target="_blank" class="link-button">
         Instagram
       </a>
-      <!-- QR Code (Clickable) with Instagram logo in the center -->
-      <a href="https://www.instagram.com/theflippinowl" target="_blank">
+      <!-- Right: Small logo on top of QR code (clickable) -->
+      <a href="https://www.instagram.com/theflippinowl" target="_blank" class="qr-container">
         <img 
+          class="qr-logo" 
+          src="LOGO_URL"
+          alt="Instagram Logo"
+        />
+        <img
           class="qr-code"
-          src="https://quickchart.io/qr?size=100
-               &text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl
-               &centerImageUrl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fe7%2FInstagram_logo_2016.svg"
+          src="https://quickchart.io/qr?size=100&text=https://www.instagram.com/theflippinowl"
           alt="Instagram QR Code"
         />
       </a>
@@ -108,21 +129,25 @@
 
     <!-- Facebook Row -->
     <div class="link-item">
-      <!-- Button (Clickable) -->
+      <!-- Left: Button -->
       <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="link-button">
         Facebook
       </a>
-      <!-- QR Code (Clickable) with Facebook logo in the center -->
-      <a href="https://www.facebook.com/Sunnylulus" target="_blank">
-        <img 
+      <!-- Right: Small logo on top of QR code (clickable) -->
+      <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="qr-container">
+        <img
+          class="qr-logo"
+          src="LOGO_URL"
+          alt="Facebook Logo"
+        />
+        <img
           class="qr-code"
-          src="https://quickchart.io/qr?size=100
-               &text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus
-               &centerImageUrl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc2%2FF_icon.svg"
+          src="https://quickchart.io/qr?size=100&text=https://www.facebook.com/Sunnylulus"
           alt="Facebook QR Code"
         />
       </a>
     </div>
+
   </div>
 </body>
 </html>
