@@ -173,7 +173,13 @@
       new Etsy.Mini(15570280, 'gallery', columns, rows, 0, 'https://www.etsy.com');
     }
     window.addEventListener('load', loadEtsyMini);
-    window.addEventListener('resize', loadEtsyMini);
+    
+    // Debounce the resize event to avoid constant refreshing
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(loadEtsyMini, 250);
+    });
   </script>
 </body>
 </html>
