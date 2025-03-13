@@ -25,11 +25,39 @@
       font-size: 1.2em;
       margin-bottom: 1em;
     }
-    /* Etsy Mini Shop Container */
-    .etsy-container {
-      width: 100%;
-      max-width: 800px;
+    /* Etsy Mini Responsive Embed Styles */
+    .etsy-embed-wrapper {
+      text-align: center;
+      max-width: 100%;
+      overflow-x: auto;
       margin: 20px auto;
+    }
+    /* Default: show desktop version */
+    .etsy-widget-desktop {
+      display: block;
+    }
+    .etsy-widget-tablet,
+    .etsy-widget-mobile {
+      display: none;
+    }
+    /* Tablet (between 768px and 1024px) */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .etsy-widget-desktop {
+        display: none;
+      }
+      .etsy-widget-tablet {
+        display: block;
+      }
+    }
+    /* Mobile (up to 767px) */
+    @media screen and (max-width: 767px) {
+      .etsy-widget-desktop,
+      .etsy-widget-tablet {
+        display: none;
+      }
+      .etsy-widget-mobile {
+        display: block;
+      }
     }
     /* Link container for QR codes and buttons */
     .link-container {
@@ -67,7 +95,6 @@
       align-items: center;
       text-decoration: none;
     }
-    /* QR Wrapper holds the QR code and overlay logo */
     .qr-wrapper {
       position: relative;
       display: inline-block;
@@ -105,14 +132,36 @@
   <h1>The Flippin Owl</h1>
   <p>Discover Timeless Treasures &amp; Artisan Creations</p>
   
-  <!-- Etsy Mini Shop -->
-  <div class="etsy-container">
-    <!-- The Etsy.Mini script will render your shop inside this container -->
-    <div id="gallery"></div>
-    <script type="text/javascript" src="https://www.etsy.com/assets/js/etsy_mini_shop.js"></script>
-    <script type="text/javascript">
-      new Etsy.Mini(15570280, 'gallery', 3, 3, 0, 'https://www.etsy.com');
-    </script>
+  <!-- Etsy Embed (Responsive Versions) -->
+  <div class="etsy-embed-wrapper">
+    <script type='text/javascript' src='https://www.etsy.com/assets/js/etsy_mini_shop.js'></script>
+
+    <!-- Desktop Version -->
+    <div class="etsy-widget-desktop">
+      <center>
+        <script type='text/javascript'>
+          new Etsy.Mini(15570280, 'gallery', 5, 3, 0, 'https://www.etsy.com');
+        </script>
+      </center>
+    </div>
+
+    <!-- Tablet Version -->
+    <div class="etsy-widget-tablet">
+      <center>
+        <script type='text/javascript'>
+          new Etsy.Mini(15570280, 'gallery', 3, 4, 0, 'https://www.etsy.com');
+        </script>
+      </center>
+    </div>
+
+    <!-- Mobile Version -->
+    <div class="etsy-widget-mobile">
+      <center>
+        <script type='text/javascript'>
+          new Etsy.Mini(15570280, 'gallery', 2, 6, 0, 'https://www.etsy.com');
+        </script>
+      </center>
+    </div>
   </div>
   
   <!-- Link Container with QR Codes -->
