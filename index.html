@@ -59,32 +59,32 @@
       text-decoration: none;
     }
 
-    /* QR Wrapper to hold QR code and logo */
+    /* QR Wrapper holds the QR code and overlays the logo */
     .qr-wrapper {
       position: relative;
       display: inline-block;
-      width: 160px; /* Adjust as needed */
-      height: 160px; /* Adjust as needed */
+      width: 100px;  /* Matches the QR size */
+      height: 100px; /* Matches the QR size */
     }
 
-    /* The QR code */
+    /* QR code image */
     .qr-code {
-      width: 160px;  
-      height: 160px;  
+      width: 100px;  
+      height: 100px;  
       display: block;
     }
 
-    /* The logo centered on top of QR */
+    /* Centered logo overlay */
     .qr-logo {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 40px;  /* Adjust size as needed */
-      height: 40px; /* Adjust size as needed */
+      width: 35px;  /* Adjust the logo size as needed */
+      height: 35px;
       transform: translate(-50%, -50%);
-      border-radius: 50%; /* Make it circular */
-      background-color: white; /* Helps with contrast */
-      padding: 4px; /* Small padding for readability */
+      border-radius: 50%; /* Optional: makes the logo circular */
+      background-color: white; /* Optional: provides contrast if needed */
+      padding: 2px; /* Optional: adds a small border around the logo */
     }
   </style>
 </head>
@@ -101,7 +101,8 @@
       </a>
       <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?size=100&text=https://www.etsy.com/shop/theflippinowl" alt="Etsy QR Code" />
+          <!-- URL-encoded text and ecLevel set to H for extra error correction -->
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl&size=100&ecLevel=H" alt="Etsy QR Code" />
           <img class="qr-logo" src="https://cdn.brandfetch.io/etsy.com/w/50/h/50?c=1id_PRpGK9iB5w2F1tN" alt="Etsy Logo" />
         </div>
       </a>
@@ -114,7 +115,7 @@
       </a>
       <a href="https://www.instagram.com/theflippinowl" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?size=100&text=https://www.instagram.com/theflippinowl" alt="Instagram QR Code" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl&size=100&ecLevel=H" alt="Instagram QR Code" />
           <img class="qr-logo" src="https://cdn.brandfetch.io/instagram.com/w/50/h/50/theme/light/symbol?c=1id_PRpGK9iB5w2F1tN" alt="Instagram Logo" />
         </div>
       </a>
@@ -127,7 +128,7 @@
       </a>
       <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?size=100&text=https://www.facebook.com/Sunnylulus" alt="Facebook QR Code" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus&size=100&ecLevel=H" alt="Facebook QR Code" />
           <img class="qr-logo" src="https://cdn.brandfetch.io/facebook.com/w/50/h/50/symbol?c=1id_PRpGK9iB5w2F1tN" alt="Facebook Logo" />
         </div>
       </a>
