@@ -107,42 +107,11 @@
   
   <!-- Etsy Mini Shop -->
   <div class="etsy-container">
+    <!-- The Etsy.Mini script will render your shop inside this container -->
     <div id="gallery"></div>
     <script type="text/javascript" src="https://www.etsy.com/assets/js/etsy_mini_shop.js"></script>
-    <script>
-      var lastColumns = 0; // store the last used column count
-      
-      function loadEtsyMini() {
-        var container = document.getElementById('gallery');
-        var containerWidth = container.offsetWidth;
-        var columns;
-        // Preset breakpoints:
-        if (containerWidth < 600) {
-          columns = 2;
-        } else if (containerWidth < 1000) {
-          columns = 4;
-        } else {
-          columns = 6;
-        }
-        // Only reload if the column count has changed
-        if (columns === lastColumns) {
-          return;
-        }
-        lastColumns = columns;
-        var rows = 3; // Fixed number of rows (adjust as needed)
-        container.innerHTML = "";
-        new Etsy.Mini(15570280, 'gallery', columns, rows, 0, 'https://www.etsy.com');
-      }
-      
-      // Initial load
-      window.addEventListener('load', loadEtsyMini);
-      
-      // Debounce the resize event to prevent constant refreshing
-      let resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(loadEtsyMini, 250);
-      });
+    <script type="text/javascript">
+      new Etsy.Mini(15570280, 'gallery', 3, 3, 0, 'https://www.etsy.com');
     </script>
   </div>
   
