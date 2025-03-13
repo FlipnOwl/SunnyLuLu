@@ -107,11 +107,34 @@
   
   <!-- Etsy Mini Shop -->
   <div class="etsy-container">
-    <!-- The Etsy.Mini script will render your shop inside this container -->
     <div id="gallery"></div>
     <script type="text/javascript" src="https://www.etsy.com/assets/js/etsy_mini_shop.js"></script>
-    <script type="text/javascript">
-      new Etsy.Mini(15570280, 'gallery', 3, 3, 0, 'https://www.etsy.com');
+    <script>
+      function loadEtsyMini() {
+        var container = document.getElementById('gallery');
+        var containerWidth = container.offsetWidth;
+        var columns;
+        // Preset breakpoints:
+        if (containerWidth < 600) {
+          columns = 2;
+        } else if (containerWidth < 1000) {
+          columns = 4;
+        } else {
+          columns = 6;
+        }
+        var rows = 3; // Fixed number of rows
+        container.innerHTML = "";
+        new Etsy.Mini(15570280, 'gallery', columns, rows, 0, 'https://www.etsy.com');
+      }
+      // Load on initial window load
+      window.addEventListener('load', loadEtsyMini);
+      
+      // Debounce the resize event
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(loadEtsyMini, 250);
+      });
     </script>
   </div>
   
