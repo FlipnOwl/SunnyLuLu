@@ -30,14 +30,16 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      width: 90%;
+      max-width: 500px;
     }
 
     .link-item {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      width: 100%;
     }
 
     .link-button {
@@ -46,8 +48,10 @@
       color: white;
       padding: 10px 15px;
       border-radius: 10px;
-      font-size: 1.2em;
+      font-size: 1.1em;
       transition: background 0.3s;
+      width: 250px; /* Ensure all buttons are the same width */
+      text-align: center;
     }
     .link-button:hover {
       background-color: #0056b3;
@@ -59,32 +63,44 @@
       text-decoration: none;
     }
 
-    /* QR Wrapper holds the QR code and overlays the logo */
+    /* QR Wrapper to hold QR code and overlay logo */
     .qr-wrapper {
       position: relative;
       display: inline-block;
-      width: 120px;  /* Matches the QR size */
-      height: 120px; /* Matches the QR size */
+      width: 120px;  
+      height: 120px;  
     }
 
-    /* QR code image */
+    /* QR Code */
     .qr-code {
       width: 120px;  
       height: 120px;  
       display: block;
     }
 
-    /* Centered logo overlay */
+    /* Logo Overlay */
     .qr-logo {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 35px;  /* Adjust the logo size as needed */
+      width: 35px;  
       height: 35px;
       transform: translate(-50%, -50%);
-      border-radius: 50%; /* Optional: makes the logo circular */
-      background-color: white; /* Optional: provides contrast if needed */
-      padding: 2px; /* Optional: adds a small border around the logo */
+      border-radius: 50%;
+      background-color: white;
+      padding: 2px;
+    }
+
+    /* Ensure everything stays vertically aligned */
+    @media screen and (max-width: 600px) {
+      .link-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .link-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -100,8 +116,8 @@
       </a>
       <a href="https://www.instagram.com/theflippinowl" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl&size=100&ecLevel=H" alt="Instagram QR Code" />
-          <img class="qr-logo" src="https://cdn.brandfetch.io/instagram.com/w/50/h/50/theme/light/symbol?c=1id_PRpGK9iB5w2F1tN" alt="Instagram Logo" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl&size=120&ecLevel=H" alt="Instagram QR Code" />
+          <img class="qr-logo" src="https://cdn.brandfetch.io/instagram.com/w/50/h/50/theme/light/symbol" alt="Instagram Logo" />
         </div>
       </a>
     </div>
@@ -113,9 +129,8 @@
       </a>
       <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <!-- URL-encoded text and ecLevel set to H for extra error correction -->
-          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl&size=100&ecLevel=H" alt="Etsy QR Code" />
-          <img class="qr-logo" src="https://cdn.brandfetch.io/etsy.com/w/50/h/50?c=1id_PRpGK9iB5w2F1tN" alt="Etsy Logo" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl&size=120&ecLevel=H" alt="Etsy QR Code" />
+          <img class="qr-logo" src="https://cdn.brandfetch.io/etsy.com/w/50/h/50" alt="Etsy Logo" />
         </div>
       </a>
     </div>
@@ -127,8 +142,8 @@
       </a>
       <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus&size=100&ecLevel=H" alt="Facebook QR Code" />
-          <img class="qr-logo" src="https://cdn.brandfetch.io/facebook.com/w/50/h/50/symbol?c=1id_PRpGK9iB5w2F1tN" alt="Facebook Logo" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus&size=120&ecLevel=H" alt="Facebook QR Code" />
+          <img class="qr-logo" src="https://cdn.brandfetch.io/facebook.com/w/50/h/50/symbol" alt="Facebook Logo" />
         </div>
       </a>
     </div>
