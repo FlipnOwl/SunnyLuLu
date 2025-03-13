@@ -109,10 +109,6 @@
   <div class="etsy-container">
     <!-- The Etsy.Mini script will render your shop inside this container -->
     <div id="gallery"></div>
-    <script type="text/javascript" src="https://www.etsy.com/assets/js/etsy_mini_shop.js"></script>
-    <script type="text/javascript">
-      new Etsy.Mini(15570280, 'gallery', 3, 3, 0, 'https://www.etsy.com');
-    </script>
   </div>
   
   <!-- Link Container with QR Codes -->
@@ -156,5 +152,29 @@
       </a>
     </div>
   </div>
+  
+  <!-- Load Etsy Mini with dynamic column calculation -->
+  <script type="text/javascript" src="https://www.etsy.com/assets/js/etsy_mini_shop.js"></script>
+  <script>
+    function loadEtsyMini() {
+      var container = document.getElementById('gallery');
+      var containerWidth = container.offsetWidth;
+      // Define a minimum width per product cell (adjust as needed)
+      var minItemWidth = 200;
+      // Calculate the number of columns that can fit into the container
+      var columns = Math.floor(containerWidth / minItemWidth);
+      if (columns < 1) { columns = 1; }
+      // Use a fixed number of rows (adjust as desired)
+      var rows = 3;
+      // Clear the container for reinitialization
+      container.innerHTML = "";
+      // Initialize Etsy Mini with the dynamic column count
+      new Etsy.Mini(15570280, 'gallery', columns, rows, 0, 'https://www.etsy.com');
+    }
+    // Load on initial window load
+    window.addEventListener('load', loadEtsyMini);
+    // Reload Etsy Mini on window resize for responsiveness (you can debounce if needed)
+    window.addEventListener('resize', loadEtsyMini);
+  </script>
 </body>
 </html>
