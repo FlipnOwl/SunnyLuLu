@@ -29,16 +29,17 @@
     .link-container {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px; /* Reduced space between rows */
       width: 90%;
-      max-width: 500px;
+      max-width: 450px;
     }
 
     .link-item {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center; /* Center everything */
       align-items: center;
+      gap: 10px; /* Reduced gap */
       width: 100%;
     }
 
@@ -50,7 +51,7 @@
       border-radius: 10px;
       font-size: 1.1em;
       transition: background 0.3s;
-      width: 250px; /* Ensure all buttons are the same width */
+      width: 220px; /* Slightly smaller button width */
       text-align: center;
     }
     .link-button:hover {
@@ -67,14 +68,14 @@
     .qr-wrapper {
       position: relative;
       display: inline-block;
-      width: 120px;  
-      height: 120px;  
+      width: 110px; /* Slightly smaller QR */
+      height: 110px;  
     }
 
     /* QR Code */
     .qr-code {
-      width: 120px;  
-      height: 120px;  
+      width: 110px;  
+      height: 110px;  
       display: block;
     }
 
@@ -83,23 +84,21 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 35px;  
-      height: 35px;
+      width: 30px;  /* Adjusted for better QR readability */
+      height: 30px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
       background-color: white;
       padding: 2px;
     }
 
-    /* Ensure everything stays vertically aligned */
+    /* Mobile View - Hide Buttons and Show Only QR Codes */
     @media screen and (max-width: 600px) {
-      .link-item {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
       .link-button {
-        width: 100%;
+        display: none; /* Hide buttons on narrow screens */
+      }
+      .link-item {
+        justify-content: center; /* Center QR codes */
       }
     }
   </style>
@@ -116,7 +115,7 @@
       </a>
       <a href="https://www.instagram.com/theflippinowl" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl&size=120&ecLevel=H" alt="Instagram QR Code" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.instagram.com%2Ftheflippinowl&size=110&ecLevel=H" alt="Instagram QR Code" />
           <img class="qr-logo" src="https://cdn.brandfetch.io/instagram.com/w/50/h/50/theme/light/symbol" alt="Instagram Logo" />
         </div>
       </a>
@@ -129,7 +128,7 @@
       </a>
       <a href="https://www.etsy.com/shop/theflippinowl" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl&size=120&ecLevel=H" alt="Etsy QR Code" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.etsy.com%2Fshop%2Ftheflippinowl&size=110&ecLevel=H" alt="Etsy QR Code" />
           <img class="qr-logo" src="https://cdn.brandfetch.io/etsy.com/w/50/h/50" alt="Etsy Logo" />
         </div>
       </a>
@@ -142,7 +141,7 @@
       </a>
       <a href="https://www.facebook.com/Sunnylulus" target="_blank" class="qr-container">
         <div class="qr-wrapper">
-          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus&size=120&ecLevel=H" alt="Facebook QR Code" />
+          <img class="qr-code" src="https://quickchart.io/qr?text=https%3A%2F%2Fwww.facebook.com%2FSunnylulus&size=110&ecLevel=H" alt="Facebook QR Code" />
           <img class="qr-logo" src="https://cdn.brandfetch.io/facebook.com/w/50/h/50/symbol" alt="Facebook Logo" />
         </div>
       </a>
