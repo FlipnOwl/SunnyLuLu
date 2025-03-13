@@ -110,6 +110,8 @@
     <div id="gallery"></div>
     <script type="text/javascript" src="https://www.etsy.com/assets/js/etsy_mini_shop.js"></script>
     <script>
+      var lastColumns = 0; // store the last used column count
+      
       function loadEtsyMini() {
         var container = document.getElementById('gallery');
         var containerWidth = container.offsetWidth;
@@ -122,14 +124,20 @@
         } else {
           columns = 6;
         }
-        var rows = 3; // Fixed number of rows
+        // Only reload if the column count has changed
+        if (columns === lastColumns) {
+          return;
+        }
+        lastColumns = columns;
+        var rows = 3; // Fixed number of rows (adjust as needed)
         container.innerHTML = "";
         new Etsy.Mini(15570280, 'gallery', columns, rows, 0, 'https://www.etsy.com');
       }
-      // Load on initial window load
+      
+      // Initial load
       window.addEventListener('load', loadEtsyMini);
       
-      // Debounce the resize event
+      // Debounce the resize event to prevent constant refreshing
       let resizeTimer;
       window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
